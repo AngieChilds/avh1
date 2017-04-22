@@ -4,3 +4,8 @@ angie:
     player: angie
     email: test@home.com
     password_digest: <%= User.digest('password') %>
+    
+jelly: 
+    player: jelly
+    email: test22@home.com
+    password_digest: <%= User.digest('password') %>  
