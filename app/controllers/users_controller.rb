@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
- before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+ before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :special]
  before_action :correct_user,   only: [:edit, :update]
  before_action :admin_user,     only: :destroy
     
@@ -50,23 +50,31 @@ def create
     redirect_to users_url
   end
   
+  def tr
+    @user = User.find(params[:id])
+    @user.update_attributes(status: "trusty")
+    redirect_to users_url
+  end
   
-  
-  
+  def mod
+    @user = User.find(params[:id])
+    @user.update_attributes(status: "moderator")
+    redirect_to users_url
+  end
   
   
   
   private
 
     def user_params
-      params.require(:user).permit(:player, :email, :password, :password_confirmation)
+      params.require(:user).permit(:player, :email, :status, :password, :password_confirmation)
                                    
     end 
   
      # Confirms an admin user.
     def admin_user
-      redirect_to(root_url) unless current_user.admin?
-    end
+     redirect_to(root_url) unless current_user.admin?
+     end
     
  # Before filters
 
@@ -85,7 +93,6 @@ def create
       redirect_to(root_url) unless @user == current_user
     end
       
-  
   
   
 end

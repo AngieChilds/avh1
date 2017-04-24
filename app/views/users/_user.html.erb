@@ -1,12 +1,17 @@
 <li>
   
-  <%= link_to user.player, user %>
-    
-   <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
+  
+  <%= link_to user.player, user %> |
+  <%= link_to user.status, user %>
+  <% if current_user.admin? && !current_user?(user) %> 
+  <%= link_to user.email, user %>
+    | 
+   <%= link_to "trusty", tr_user_path(user), method: :patch %> 
+   <%= link_to "mod", mod_user_path(user), method: :patch %> 
+   <%= link_to "delete", user, method: :delete,
                                   data: { confirm: "You sure?" } %>
-  <% end %> 
-    
+   
+   <% end %> 
     
     
     
