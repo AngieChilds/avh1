@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
- before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :special]
+ before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
  before_action :correct_user,   only: [:edit, :update]
  before_action :admin_user,     only: :destroy
     
@@ -74,6 +74,12 @@ def create
      # Confirms an admin user.
     def admin_user
      redirect_to(root_url) unless current_user.admin?
+     end
+     def moderator_user
+     redirect_to(root_url) unless current_user.moderator?
+     end
+    def trusty_user
+     redirect_to(root_url) unless current_user.trusty?
      end
     
  # Before filters
