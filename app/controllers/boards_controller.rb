@@ -32,10 +32,10 @@ class BoardsController < ApplicationController
     redirect_to_boards_path
   end
   
-  def player
-  @board = Board.find_by(params[:id])
-   player = User.where(id: board.user_id).pluck("player")
-  end
+  #def player
+ # @board = Board.find_by(params[:id])
+ #  player = User.where(id: board.user_id).pluck("player")
+  #end
   
   
   
