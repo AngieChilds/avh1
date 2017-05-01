@@ -4,15 +4,15 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Text</th>
+    <th>mod id</th>
   </tr>
- <% if current_user.moderator? or current_user.admin? %>
+ <% if current_user.moderator? || current_user.admin? %>
   <% end %>
   <% @boards.each do |board| %>
     <tr>
       <td><%= board.title %>|</td> 
-      <td><%= board.text %>|</td> 
       <td><%= board.user_id %> |</td> 
+      
       <td><%= link_to 'new', new_board_path  %> |</td>
       <td><%= link_to 'Show', board_path(board) %>|</td> 
       <td> <%= link_to "delete", board, method: :delete,

@@ -4,7 +4,7 @@
   <%= link_to user.player, user %> |
   <%= link_to user.status, user %> |
   
-  <% if current_user.moderator? or current_user.admin? && !current_user?(user) %>
+  <% if current_user.moderator? || current_user.admin? && !current_user?(user) %>
   <% end %>
   <%= link_to "trusty", tr_user_path(user), method: :patch %> |
   <% if current_user.admin? && !current_user?(user) %> 

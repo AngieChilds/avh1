@@ -14,7 +14,8 @@ class BoardsController < ApplicationController
   end
   
   def show
-    @board = Board.find_by(params[:id])
+    @board = Board.find(params[:id])
+    
   end
   
   def new
@@ -23,13 +24,12 @@ class BoardsController < ApplicationController
   
   def index
     @boards = Board.all
-    
+   
   end
   
   def destroy
-    @board = Board.find(params[:id])
-    board.destroy
-    redirect_to_boards_path
+    Board.find(params[:id]).destroy
+    redirect_to boards_url
   end
   
   #def player
