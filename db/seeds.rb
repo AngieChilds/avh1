@@ -1,11 +1,11 @@
-User.create!(player:  "Angie",
+User.create!(player:  "Pirate Princess",
              email: "me@home.com",
              password:              "foobar",
              password_confirmation: "foobar",
              status: "admin")
              
              
-99.times do |n|
+9.times do |n|
   player  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"

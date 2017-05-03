@@ -1,6 +1,7 @@
 class BoardsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :index, :edit, :update, :destroy]
-  before_action :admin_user, only: :destroy
+  
+  before_action :logged_in_user,  only: [:create, :index, :edit, :update, :destroy]
+  before_action :moderator_user, only: [:create, :index, :edit, :update, :destroy]
  
   def create
     @board = Board.new(board_params)
@@ -45,8 +46,7 @@ class BoardsController < ApplicationController
     params.require(:board).permit(:title, :text).merge(user_id: current_user.id)
   end
   
-  
-  
+   
   
   
   

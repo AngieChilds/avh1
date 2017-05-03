@@ -62,7 +62,15 @@ def create
     redirect_to users_url
   end
   
-  
+  def moderator_user 
+       @user.find(params[:id])
+       if current_user[:status]>=User.status[:moderator]
+       
+       else
+       redirect_to(root_url)
+             
+       end
+    end
   
   private
 
@@ -72,15 +80,22 @@ def create
     end 
   
      # Confirms an admin user.
+    
+    def trusty_user
+     @user.find(params[:id])
+     User.where({status: ["moderator", "admin"]})
+     redirect_to(root_url) unless current_user.trusty? 
+     end
+    
+    
+    
+        
     def admin_user
+      @user = User.find(params[:id])
      redirect_to(root_url) unless current_user.admin?
      end
-     def moderator_user
-     redirect_to(root_url) unless current_user.moderator?
-     end
-    def trusty_user
-     redirect_to(root_url) unless current_user.trusty?
-     end
+     
+     
     
  # Before filters
 
@@ -96,7 +111,7 @@ def create
     # Confirms the correct user.
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_url) unless @user == current_user
+      redirect_to(root_url) unless ( current_user?(@user) || current_user.admin? )
     end
       
   

@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   
   # change b to novice
-  enum status: [:b, :trusty, :moderator, :admin]
+  enum status: {novice: 0,trusty: 1, moderator: 2, admin: 3}
   attr_accessor :remember_token
   before_save { self.email = email.downcase } #user object
   validates :player, presence: true, length: { maximum: 50 },
@@ -41,8 +41,16 @@ class User < ApplicationRecord
    # Forgets a user.
   def forget
     update_attribute(:remember_digest, nil)
+    
   end
- 
+ def to_param
+   "#{id}-#{player.parameterize}"
+ end
+  
+  has_many :boards
+  has_many :comments, through: :boards
+  
+  
 end
   
   
