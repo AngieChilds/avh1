@@ -4,6 +4,10 @@
   <strong>Comment:</strong>
   <%= comment.body %>
 </p>
+<p>
+<strong>Commment by:</strong>
+<%= comment.user.try(:player) %>
+
 
 <p>
   <%= link_to 'Destroy Comment', [comment.board, comment],

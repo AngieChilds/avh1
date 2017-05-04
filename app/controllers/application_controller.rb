@@ -18,10 +18,10 @@ class ApplicationController < ActionController::Base
      redirect_to(root_url) unless current_user.admin?
      end
      def moderator_user
-     redirect_to(root_url) unless current_user.moderator?
+     redirect_to(root_url) unless (current_user.moderator? || current_user.admin?)
      end
     def trusty_user
-     redirect_to(root_url) unless current_user.trusty?
+     redirect_to(root_url) unless (current_user.trusty?    || current_user.moderator? || current_user.admin?)
      end
   
   

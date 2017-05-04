@@ -10,7 +10,7 @@
   <% @boards.each do |board| %>
     <tr>
       <td><%= link_to "#{ board.title}" , board_path(board) %>|</td> 
-      <td><%= link_to board.user_id %> |</td> 
+      <td><%= link_to board.user.try(:player)%> |</td> 
       
      
       <td> <%= link_to "delete", board, method: :delete,
