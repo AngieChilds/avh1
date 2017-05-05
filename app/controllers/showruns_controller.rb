@@ -42,7 +42,7 @@ end
  def update 
    showblog = Showblog.find(params[:showblog_id])
   @showrun = showblog.showruns.find(params[:id])
-   if @showrun.update_attributes(showrun_params)
+   if @showrun.update_attributes(edit_params)
     flash.now[:success] = "showrun entry updated"
     redirect_back_or showblog
 #/showblogs/:showblog_id/showruns/:id(.:format
@@ -60,10 +60,12 @@ def edit
  private
  
 def showrun_params
-  params.require(:showrun).permit(:other_player, :spec_vote, :event, :make_other, :amt, :level_to_make).merge(user_id: current_user.id)
+  params.require(:showrun).permit(:other_player, :spec_vote, :event, :make_other, :amt).merge(user_id: current_user.id)
   
 end
-
+def edit_params
+  params.require(:showrun).permit(:level_to_make)
+end
 
 
 
