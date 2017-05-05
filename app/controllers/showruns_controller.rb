@@ -26,7 +26,7 @@ class ShowrunsController < ApplicationController
      @showblog = Showblog.find(params[:showblog_id])
     @showrun = @showblog.showruns.find(params[:id])
     @showrun.destroy
-     redirect_to showblog_path(@showblog)
+     redirect_back_or showblogs_url
          #  DELETE /showblogs/:showblog_id/showruns/:id(.:format)
  end
    

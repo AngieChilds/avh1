@@ -41,8 +41,8 @@
     <td width="15%"><%= showblog.spec_choice %></td>
     <td width="15%"><%= showblog.level_range %></td>
     <td width="15%"><%= showblog.note %></td>
-    <td width="5%"><%= link_to 'Edit', action: :edit, id: showblog.id %></td>
-    <td width="5%"><%= link_to 'Destroy', showblog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td width="5%"><%= link_to image_tag("ic_settings_black_24dp.png"), action: :edit, id: showblog.id %></td>
+    <td width="5%"><%= link_to image_tag("ic_delete_forever.png"), showblog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         
   </tr>
 <% end %>

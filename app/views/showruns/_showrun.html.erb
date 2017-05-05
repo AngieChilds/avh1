@@ -12,8 +12,9 @@
     <td width="10%"><%= showrun.amt %></td>
     <td width="5%"><%= showrun.make_other %></td>
     <td width="20%"><%= showrun.level_to_make %></td>
-    <td width="5%"><%= link_to "edit", edit_showblog_showrun_path(@showblog, showrun) %>
-    <td width="5%" ><%= link_to image_tag("ic_delete_forever"), [@showblog, showrun], confirm: 'Are you sure?', method: :delete %></td>
+    <td width="5%"><%= link_to image_tag("ic_settings_black_24dp.png"), edit_showblog_showrun_path(@showblog, showrun) %>
+    <td width="5%" ><%= link_to image_tag("ic_delete_forever.png"), [showrun.showblog, showrun], method: :delete, 
+                                                        data: {confirm: 'Are you sure?'} %></td>
      </tr>
      
 
