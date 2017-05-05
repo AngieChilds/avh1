@@ -4,6 +4,12 @@
 
 /* mixins, variables, etc. */
 
+
+$white: #ffffff;
+$jumper: #0033cc;
+$racing: #009933;
+$western: #793434;
+$english: #BF24EE;
 $gray-medium-light: #eaeaea;
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -205,3 +211,23 @@ input {
   }
 }
 
+.english {
+    background-color: $english;
+        color: $white
+}
+
+.jumper {
+    background-color: $jumper;
+       color: $white
+        
+}
+.racing {
+    background-color: $racing;
+        color: $white
+}
+
+.western {
+    background-color: $western;
+        color: $white
+        
+}

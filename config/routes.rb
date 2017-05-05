@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'showruns/new'
+
+  get 'showruns/edit'
+
+  get 'showruns/index'
+
+  get 'showblogs/new'
+
   get 'sessions/new'
 
   root   'static_pages#home'
@@ -19,7 +27,10 @@ Rails.application.routes.draw do
   
   end
   resources :boards do
-    resources :comments
+  resources :comments
+  end
+  resources :showblogs  do 
+  resources :showruns
   end
 end
 

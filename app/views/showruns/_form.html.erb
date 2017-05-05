@@ -1,0 +1,33 @@
+
+  <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+          <%= form_for([@showblog, @showblog.showruns.build]) do |f| %>
+         
+   Your player making shows: <%= f.text_field :other_player %><br/>
+   How many events does this player create:<%= f.text_field :event %><br/>
+    
+   Vote for your choice: <% f.radio_button :spec_vote, 'Vote', :checked => true  %>
+        <div class="english">English<%= f.radio_button :spec_vote, 'English'  %></div>
+	
+	<div class="jumper">Jumper<%= f.radio_button :spec_vote, 'Jumper'%></div>
+	
+	<div class="western">Western<%= f.radio_button :spec_vote, 'Western'%></div>
+	
+	<div class="racing">Racing<%= f.radio_button :spec_vote, 'Racing'%></div>
+	
+ How many levels would you like to make? <%= f.text_field :amt %><br/>
+  
+ If your choice does not win will you make another spec? <% f.radio_button :make_other, 'Yes',  :checked => true %>
+ <%= f.radio_button :make_other, 'Yes' %>
+ <%= f.label :make_other_yes, 'Yes' %>
+  <%= f.radio_button :make_other, 'No' %>
+ <%= f.label :make_other_no, 'No' %>
+ <br/>
+   
+    <%= submit_tag 'submit' %>
+  
+<% end %>
+
+</div>
+
+</div>

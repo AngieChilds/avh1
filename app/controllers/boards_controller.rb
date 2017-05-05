@@ -28,16 +28,36 @@ class BoardsController < ApplicationController
    
   end
   
+  def edit
+    @board = Board.find(params[:id])
+  end
+  
+  
+ def update
+    @board = Board.find(params[:id])
+    if @board.update_attributes(board_params)
+     flash.now[:success] = "Mod post updated"
+     redirect_to board_path(@board)
+    else
+      render 'edit'
+    end
+  end
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   def destroy
     Board.find(params[:id]).destroy
     redirect_to boards_url
   end
-  
-  #def player
- # @board = Board.find_by(params[:id])
- #  player = User.where(id: board.user_id).pluck("player")
-  #end
-  
+ 
   
   
   private

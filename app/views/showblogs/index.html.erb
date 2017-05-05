@@ -1,0 +1,54 @@
+
+<h1>Listing showblogs</h1>
+<ul>
+  <li>If you would like to make your OWN run please click:</li>
+<li>:- new showblog -: and add your notes as you would choose.</li>
+<br/>
+<li>To join a run, this means you will make particular levels</li>
+<li>when someone else has started, please click :- the showblog name -: and</li>
+<li>add your events etc.</li>
+<br/>
+<li>If you make a mistake and want to delete or edit, the trusty that made it should be able to change it.</li>
+<br/>
+</ul>
+<table class="horizontal_table" style="width: 100%; height: 10px;" border="1">
+<tbody>
+
+  <tr>
+    <th width="15%"  >Player</th>
+    <th width="15%"  >Name</th>
+    <th width="15%" >Rundate</th>
+    <th width="15%" >Spec Choice</th>
+    <th width="15%">Level Range</th>
+    <th width="15%">Note</th>
+    <th width="5%"></th>
+    <th width="5%"></th>
+   
+  </tr>
+</tbody>
+</table>
+
+<div id="showblog-list">
+<% @showblogs.each do |showblog| %>
+  <table class="horizontal_table" style="width: 100%; height: 10px;" border="1" cellspacing="0">
+<tbody>
+
+
+  <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>" >
+    <td width="15%" ><%= showblog.user.try(:player) %></td>
+    <td width="15%" ><%= link_to "#{showblog.name}", showblog_path(showblog) %></td>
+    <td width="15%"><%= showblog.rundate.strftime("%Y-%b-%d") %></td>
+    <td width="15%"><%= showblog.spec_choice %></td>
+    <td width="15%"><%= showblog.level_range %></td>
+    <td width="15%"><%= showblog.note %></td>
+    <td width="5%"><%= link_to 'Edit', action: :edit, id: showblog.id %></td>
+    <td width="5%"><%= link_to 'Destroy', showblog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+  </tr>
+<% end %>
+</tbody>
+</table>
+</div>
+<br />
+
+<h2><%= link_to 'New Showblog', new_showblog_path %> </h2> 

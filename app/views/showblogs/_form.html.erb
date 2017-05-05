@@ -1,0 +1,35 @@
+
+  <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+  <%= form_for(@showblog) do |f| %>
+  
+  <% if @showblog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@showblog.errors.count, "error") %> prohibited this showblog from being saved:</h2>
+
+      <ul>
+      <% @showblog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+ <% end %>
+<div class="field">
+  
+    <div>Name   : <%= f.text_field :name %></div>
+   <div> Rundate: <%= f.date_select :rundate %> </div>
+    <div>Set to vote or choose:   <% f.radio_button :spec_choice, 'Vote', :checked => true  %></div><br/>
+    <div class="english">English:<%= f.radio_button :spec_choice, 'English'%></div>
+    <div class="jumper">Jumper: <%= f.radio_button :spec_choice, 'Jumper'%></div>
+    <div class="western">Western:<%= f.radio_button :spec_choice, 'Western'%></div>
+    <div class="racing">Racing: <%= f.radio_button :spec_choice, 'Racing'%></div>
+    <div>Level:  <%= f.text_field :level_range  %></div>
+   <div> Note   :<%= f.text_field :note %></div>
+   <div><%= f.submit yield(:button_text), class: "btn btn-primary" %></div>
+    
+  
+  </div>
+<% end %>
+      </div>
+  </div>
+

@@ -1,0 +1,22 @@
+
+
+<P>
+
+Player making:    <%= @showrun.other_player %><br/>
+Events:    <%= @showrun.event %><br/>
+
+</p>
+
+<%= form_for([@showrun.showblog, @showrun]) do |f| %>
+  <div>
+   Instructions for making shows: <%= f.text_field :level_to_make %><br/>
+   
+ <br/>
+   
+    <%= submit_tag 'submit' %>
+  
+<% end %>
+
+</div>
+
+  

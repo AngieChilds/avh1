@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  other_player: MyString
+  spec_vote: MyString
+  event: 1
+  make_other: MyString
+  amt: 1
+  level_to_make: MyString
+  showblog: one
+  user: one
+
+two:
+  other_player: MyString
+  spec_vote: MyString
+  event: 1
+  make_other: MyString
+  amt: 1
+  level_to_make: MyString
+  showblog: two
+  user: two

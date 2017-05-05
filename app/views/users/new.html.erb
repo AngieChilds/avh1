@@ -1,8 +1,24 @@
 <% provide(:title, 'Sign up') %>
 <% provide(:button_text, 'Create my account') %>
 <h1>Sign up</h1>
+
+
+
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= render 'form' %>
+   
+<p>Please use the same email and password as you use for AVH.<br/>
+   There is no way to recover a password here so if you forget, you can 
+   use AVH password recovery to find both.<br/>
+   Use the remember - keep me logged in ONLY is you at your own computer.<br/>
+   Do not use for public or school computers.
+</p>
+
+
+
+
+
+
+<%= render 'form' %>
   </div>
 </div>

@@ -1,0 +1,69 @@
+
+<p>
+  <b>Name:</b>
+<marquee scrollamount="6" ><h2> <%= @showblog.name %></h2></marquee>
+</p>
+
+<p>
+  
+  
+</p>
+<b>Sign up to join the run</b>
+<%= render 'showruns/form' %>
+
+
+<p>
+  
+  <b>Rundate:</b>
+  <%= @showblog.rundate.strftime("%Y-%b-%d") %>
+</p>
+
+<p>
+  <b>Spec:</b>
+  <%= @showblog.spec_choice%>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @showblog.level_range %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @showblog.note %>
+</p>
+
+<p>
+  <b> The Voting so far:</b><br/>
+
+<%= vote_spec(@showblog) %>
+
+</p>
+<table class="horizontal_table" style="width: 100%; height: 10px;" border="1">
+<tbody>
+
+  <tr>
+    <th width="20%">Submitter</th>
+    <th width="15%">Show maker</th>
+    <th width="10%">Event</th>
+    <th width="10%">Vote</th>
+    <th width="10%">Make levels</th>
+   <th width="5%">Make Other ?</th>
+   <th width="20%">Levels to make</th>
+   <th width="5%"></th>
+   <th width="5%"></th>
+  </tr>
+  
+  
+</tbody>
+</table>
+
+<%= render @showblog.showruns.order(event: :asc )%>
+
+
+
+
+
+
+<%= link_to "Showblog for the makers", controller: "showblogs" %><br/>
+<%= link_to "Home", root_path %>
