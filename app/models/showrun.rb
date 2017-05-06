@@ -12,8 +12,7 @@ class Showrun < ApplicationRecord
   validates :amt, numericality:  {greater_than_or_equal_to: 1,
                             less_than_or_equal_to: 100,
                             message: "must be at least 1 level not more than 
-                            100 levels, at a level half your events this is 40 
-                            shows per level."}                    
+                            100 levels."}                    
   
  
   
