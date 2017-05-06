@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-  get 'showruns/new'
-
-  get 'showruns/edit'
-
-  get 'showruns/index'
-
-  get 'showblogs/new'
-
   get 'sessions/new'
 
   root   'static_pages#home'

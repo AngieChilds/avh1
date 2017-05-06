@@ -14,11 +14,14 @@ class ShowrunsController < ApplicationController
   def create
     @showblog = Showblog.find(params[:showblog_id])
     @showrun = @showblog.showruns.create(showrun_params)
+    if @showrun.save
     flash.now[:success] = "Showrun entry created"
     redirect_to showblog_path(@showblog)
     # new_showblog_showrun GET    /showblogs/:showblog_id/showruns/new(.:format)
+    else
+      render :new
+    end
   end
-  
 
 
 

@@ -25,7 +25,8 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
-
+  # for use with nested 
+  config.active_record.index_nested_attribute_errors =  true
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
