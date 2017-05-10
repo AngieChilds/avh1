@@ -21,8 +21,8 @@
     <div>Set to vote or choose:   <% f.radio_button :spec_choice, 'Vote', :checked => true  %></div><br/>
     <div class="english">English:<%= f.radio_button :spec_choice, 'English'%></div>
     <div class="jumper">Jumper: <%= f.radio_button :spec_choice, 'Jumper'%></div>
-    <div class="western">Western:<%= f.radio_button :spec_choice, 'Western'%></div>
     <div class="racing">Racing: <%= f.radio_button :spec_choice, 'Racing'%></div>
+    <div class="western">Western:<%= f.radio_button :spec_choice, 'Western'%></div>
     <div>Level:  <%= f.text_field :level_range  %></div>
    <div> Note   :<%= f.text_field :note %></div>
    <div><%= f.submit yield(:button_text), class: "btn btn-primary" %></div>

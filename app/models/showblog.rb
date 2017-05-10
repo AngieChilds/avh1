@@ -1,6 +1,6 @@
 class Showblog < ApplicationRecord
   belongs_to :user
-  has_many :showruns, inverse_of: :showblog
+  has_many :showruns, inverse_of: :showblog, dependent: :destroy
   validates_associated :showruns
   accepts_nested_attributes_for :showruns, allow_destroy: true
   
