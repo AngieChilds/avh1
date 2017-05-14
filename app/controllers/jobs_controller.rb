@@ -4,7 +4,7 @@ class JobsController < ApplicationController
    
   def index
     @comp = Comp.find(params[:comp_id])
-    @jobs = @comp.jobs
+    @jobs = @comp.jobs.order(amount: "DESC")
   end
 
   
@@ -68,6 +68,16 @@ class JobsController < ApplicationController
   
 
   private
+  def sort_column
+  @comp.jobs.column_names.includes?(params[:sort]) ? params[:sort] : "text"
+   end
+  def sort_direction
+  %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+  end
+ 
+  
+  
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_job
       @comp = Comp.find(params[:comp_id])
@@ -76,7 +86,7 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:text, :amount, :comp_id).merge(user_id: current_user.id)
+      params.require(:job).permit(:text, :amount, :failed, :comp_id).merge(user_id: current_user.id)
     end
 end
 

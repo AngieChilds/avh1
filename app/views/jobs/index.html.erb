@@ -5,12 +5,12 @@
   
 
   <tbody>
-    <% @jobs.each do |job| %>
+    <% @comp.jobs.each do |job| %>
       <tr>
-         <td><%= job.user.try(:player) %></td>
+        <td><%= job.user.try(:player) %></td>
         <td><%= job.text %></td>
         <td><%= job.amount %></td>
-     
+        <td><%= job.failed %></td>
       
         <td><%= link_to image_tag("ic_delete_forever.png"), [job.comp, job], method: :delete, 
                                                         data: {confirm: 'Are you sure?'} %></td>
@@ -21,4 +21,4 @@
 
 <br>
 
-<%= link_to 'New Job Entry', new_comp_job_path %>
+

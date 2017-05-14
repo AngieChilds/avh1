@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     resources :showruns
   end
   resources :comps do
-    resources :prizes, :rules, :jobs, :stories      
+    resources :prizes, :rules, :jobs, :stories, :owners      
       member do
         get 'pz'
       end

@@ -7,11 +7,11 @@ class Comp < ApplicationRecord
   
   
   
-  has_many :jobs, inverse_of: :comp
+  has_many :jobs,    inverse_of: :comp
   has_many :stories, inverse_of: :comp
-  has_many :rules, inverse_of: :comp
-  has_many :prizes, inverse_of: :comp
-  
+  has_many :rules,   inverse_of: :comp
+  has_many :prizes,  inverse_of: :comp
+  has_one  :owner,   inverse_of: :comp
   
   
   validates_associated :jobs
