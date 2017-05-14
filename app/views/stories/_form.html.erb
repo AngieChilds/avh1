@@ -1,0 +1,26 @@
+
+
+ 
+ 
+ <%= form_for([@comp, @comp.stories.build]) do |f| %>
+
+
+
+
+
+<div class="field">
+    <%= f.label :title %>
+    <%= f.text_area(:title) %>
+  </div>
+ 
+
+  <div class="field">
+    <%= f.label :text %>
+    <%= f.text_area(:text, size: "50x30") %>
+  </div>
+
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

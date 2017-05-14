@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rules</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rules.each do |rule| %>
+      <tr>
+        <td><%= rule.text %></td>
+ 
+        <td><%= link_to 'Show', rule %></td>
+        <td><%= link_to 'Edit', edit_comp_rule_path(rule) %></td>
+        <td><%= link_to 'Destroy', rule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<%= link_to 'New Rule', new_comp_rule_path %>

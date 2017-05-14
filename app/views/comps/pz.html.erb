@@ -1,0 +1,19 @@
+
+<h1>Adding a prize</h1>
+
+<h1>Mod approve:<%= @comp.user.try(:player) %><br/>
+    
+    Name: <%= @comp.name %>
+</h1>
+
+
+
+<p><%= render 'prizes/form' %></p>
+
+
+
+
+
+
+
+<%= link_to 'Back', comps_path %>

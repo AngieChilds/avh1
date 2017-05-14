@@ -1,0 +1,16 @@
+
+ <%= form_for([@comp, @comp.rules.build]) do |f| %>
+
+  
+ 
+
+  <div class="field">
+    <%= f.label :text %>
+    <%= f.text_field :text %>
+  </div>
+
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

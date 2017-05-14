@@ -19,11 +19,21 @@ Rails.application.routes.draw do
   
   end
   resources :boards do
-  resources :comments
+    resources :comments
   end
   resources :showblogs  do 
-  resources :showruns
+    resources :showruns
   end
+  resources :comps do
+    resources :prizes, :rules, :jobs, :stories      
+      member do
+        get 'pz'
+      end
+  end
+  
+  
+  
+  
 end
 
    

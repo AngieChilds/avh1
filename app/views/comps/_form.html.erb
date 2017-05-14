@@ -1,0 +1,49 @@
+<%= form_for(comp) do |f| %>
+  <% if comp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comp.errors.count, "error") %> prohibited this comp from being saved:</h2>
+
+      <ul>
+      <% comp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+ 
+    <div>Story:<%= f.radio_button :foo, 'story' %></div>
+    <div>Job:  <%= f.radio_button :foo, 'job'   %></div>
+    
+
+  <div class="field">
+    Explain what the competition is all about.
+    <%= f.text_area :text %>
+  </div>
+   <div class="field">
+    Link to the player on AVH.
+    <%= f.text_field :ref_player %>
+  </div>
+    
+    
+    
+    
+  <div class="field">
+    <%= f.label :startdate %>
+    <%= f.datetime_select :startdate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :enddate %>
+    <%= f.datetime_select :enddate %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

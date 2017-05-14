@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+    Name: <%= @comp.name %>
+</h1>
+
+<h2>
+  <strong>Type:</strong>
+  <%= @comp.foo %>
+</h2>
+
+<h2>
+  <strong>Requirement:</strong><br/>
+  <%= @comp.text %>
+</h2>
+
+<h2><strong>Prizes</strong></h2>
+<h3>Examples of prizes</h3>
+
+<h5><%=link_to image_tag("credits24.png") %> Credits donated by GK via PP <br/><br/><br/>
+  Prizes from the referring player: <br/>  <br/>
+<%=link_to image_tag("coins24.png") %> Coins. 
+<%=link_to image_tag("token24.png") %> Tokens.
+<%=link_to image_tag("saddle24.png") %> Tack.
+<%=link_to image_tag("credits24.png") %> Credits.</h5>
+<h3><%= render @comp.prizes %></h3>
+
+
+
+
+
+<h2><strong>Rules</strong></h2>
+<h5>The rules known as <%=link_to image_tag("xp24.png") %><%= link_to "AVH Rules", "http://www.avirtualhorse.com/rules.html", :target => "_blank" %>
+<%=link_to image_tag("xp24.png") %> can not in anyway be over written or cancelled or altered and will always be the primary source of
+reference.  The added rules for this specific competition is in additon to, not in place of.</h5>
+
+<h2>More rules specifically for this competition</h2>
+
+
+<h3><%= render @comp.rules %></h3>
+<h3>
+  <strong>Starts:</strong>
+  <%= @comp.startdate.strftime("%Y-%b-%d") %>
+ and 
+  <strong>Ends:</strong>
+  <%= @comp.enddate.strftime("%Y-%b-%d") %>
+</h3>
+
+<h2><strong>Entries so far:</strong></h2>
+
+<h3>
+<% if (@comp.job?) %>
+<%= render @comp.jobs %>
+<strong>Enter here</strong>
+<%= render 'jobs/form' %>
+<% end %>
+</h3>
+
+<h3>
+<% if (@comp.story? ) %>
+<%= render @comp.stories %>
+    <strong>Enter here</strong>
+    
+<%= render 'stories/form' %>
+<% end %>
+</h3>
+
+<%= link_to 'Edit', edit_comp_path(@comp) %> |
+<%= link_to 'Back', comps_path %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Competitions</h1>
+<h5> Ultimately only mods will be able to create competitions and update the rules.
+    Right now, it is open to any.  Players will be able to add prizes.  I do intend
+    to get the links back to AVH display a little better.  Please try create job or story 
+    competitions and tell me what fields are required.  This is just practice where input is 
+    appreciated. Use game mail to click here >>>>>
+        <a href="http://www.avirtualhorse.com/player-details/99509">Pirate Princess</a> <<<<<
+    please put in the subject line AVH1 and give me your thoughts. </h5>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Startdate</th>
+      <th>Enddate</th>
+   
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @comps.each do |comp| %>
+  
+      <tr>
+          <td><%= comp.user.try(:player) %></td>
+        <td><%= link_to comp["ref_player"], comp["ref_player"] %></td>
+         <td><%= link_to (comp.name), comp_path(comp) %></td>
+        <td><%= comp.foo %></td>
+         <td><%= comp.startdate.strftime("%Y-%b-%d") %></td>
+        <td><%= comp.enddate.strftime("%Y-%b-%d") %></td>
+        <td><%= link_to image_tag("xp24.png"), pz_comp_path(comp) %></td>
+        <td><%= link_to image_tag("ic_settings_black_24dp.png"), edit_comp_path(comp) %></td>
+        <td><%= link_to image_tag("ic_delete_forever.png"), comp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comp', new_comp_path %>

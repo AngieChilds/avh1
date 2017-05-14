@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+
+<table>
+  
+  <tbody>
+    <% @stories.each do |story| %>
+         <td><%= story.user.try(:player) %></td>
+        <td><%= story.text %></td>
+        <td><%= link_to 'Show', comps_path(@comp, story) %></td>
+        
+      
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Story Entry', new_comp_story_path %>

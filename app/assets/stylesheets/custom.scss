@@ -11,6 +11,7 @@ $racing: #009933;
 $western: #333333;
 $english: #BF24EE;
 $gray-medium-light: #eaeaea;
+$midnight-blue: #036;
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -68,8 +69,40 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
+  color: $gray;
+}
+
+h3 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
   color: $gray-light;
 }
+
+h4 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+h5 {
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $midnight-blue; 
+    
+    
+}
+
+
+
 
 p {
   font-size: 1.1em;

@@ -1,0 +1,27 @@
+ 
+
+
+ <%= form_for([@comp, @comp.jobs.build]) do |f| %>
+
+   
+  
+
+  
+
+
+  <div class="field">
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.number_field :amount %>
+  </div>
+
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

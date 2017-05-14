@@ -51,6 +51,11 @@ class User < ApplicationRecord
   has_many :comments, through: :boards
   has_many :showblogs
   has_many :showruns, through: :showblogs
+  has_many :comps
+  has_many :stories,  through: :comps
+  has_many :jobs,     through: :comps
+  has_many :prizes,   through: :comps
+  has_many :rules,    through: :comps
   
   
 end

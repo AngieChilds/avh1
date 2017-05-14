@@ -1,0 +1,25 @@
+<h1>Editing Job</h1>
+
+
+<p>
+  <strong>Text:</strong>
+  <%= @job.text %>
+</p>
+
+
+<%= form_for([@job.comp, @job]) do |f| %>
+
+
+<div class="field">
+    <%= f.label :amount %>
+    <%= f.number_field :amount %>
+  </div>
+
+
+
+
+  <%= submit_tag 'submit' %>
+  
+<% end %>
+
+<%= link_to 'Back', comp_jobs_path(@job.comp) %>
