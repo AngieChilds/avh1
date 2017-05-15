@@ -5,9 +5,15 @@
     <section class="user_info">
       <h1>
         
-        <%= @user.player %> 
         
-         
+        Click the link to go to the home page of the player on AVH.<br/>
+        
+          <a href="<%= @user.avh  %>" target="_blank"><%= @user.player %> </a><br/>
+          
+        Click the picture on the wall to send mail.<br/><br/>
+        
+        If clicking the link only opens a new page of this site, it means the player has not yet added a link to the game.
+        
       </h1>
     </section>
   </aside>

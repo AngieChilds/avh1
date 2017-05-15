@@ -65,12 +65,7 @@ reference.  The added rules for this specific competition is in additon to, not 
  
   </tbody>
 </table>
-  
-  
-  
-  
-  
-  
+
 <%= render @comp.jobs.order(amount: :desc )%>
  
 <strong>Enter here</strong>
@@ -80,6 +75,24 @@ reference.  The added rules for this specific competition is in additon to, not 
 
 <h3>
 <% if (@comp.story? ) %>
+
+  <table class="horizontal_table" style="width: 100%; height: 10px;" border="1"> 
+  <tbody>
+  
+      <tr>
+        
+        <th width="40%">Player</th>
+        <th width="40%">Title</th>
+        <th width="10%"></th>
+        <th width="10%"></th>
+      </tr>
+ 
+  </tbody>
+</table>
+  
+  
+  
+  
 <%= render @comp.stories %>
     <strong>Enter here</strong>
     

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170514201708) do
+ActiveRecord::Schema.define(version: 20170515144756) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "title"
@@ -122,6 +122,7 @@ ActiveRecord::Schema.define(version: 20170514201708) do
     t.string   "password_digest"
     t.string   "remember_digest"
     t.integer  "status",          default: 0
+    t.string   "avh"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

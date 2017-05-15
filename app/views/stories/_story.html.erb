@@ -1,12 +1,13 @@
+<table class="horizontal_table" style="width: 100%; height: 10px;" border="1" cellspacing="0">
+    <tbody>
 
-<table>
-
-    <tr> <td><%= story.user.try(:player) %></td>
-        <td><%= link_to (story.title), comp_story_path(@comp, story) %></td>
-        <td><%= link_to image_tag("ic_settings_black_24dp.png"), edit_comp_story_path(story.comp, story) %></td>
-        <td><%= link_to image_tag("ic_delete_forever.png"), [story.comp, story], method: :delete, 
+    <tr> <td width="40%"><%= story.user.try(:player) %></td>
+        <td width="40%"><%= link_to (story.title), comp_story_path(@comp, story) %></td>
+        <td width="10%"><%= link_to image_tag("ic_settings_black_24dp.png"), edit_comp_story_path(story.comp, story) %></td>
+        <td width="10%"><%= link_to image_tag("ic_delete_forever.png"), [story.comp, story], method: :delete, 
                                                         data: {confirm: 'Are you sure?'} %></td>
       
      
     </tr>
+    </tbody>
 </table>

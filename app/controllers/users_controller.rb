@@ -75,7 +75,7 @@ def create
   private
 
     def user_params
-      params.require(:user).permit(:player, :email, :status, :password, :password_confirmation)
+      params.require(:user).permit(:player, :avh, :email, :status, :password, :password_confirmation)
                                    
     end 
   
