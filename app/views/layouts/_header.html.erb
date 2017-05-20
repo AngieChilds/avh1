@@ -4,11 +4,11 @@
     <%= link_to "AVH 1", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to image_tag("ic_home_white_24dp.png"),   root_path %></li>
-        <li><%= link_to image_tag("ic_help_white_24dp.png"),   help_path %></li>
+        <li><%= link_to 'home',   root_path %></li>
+        <li><%= link_to 'help',   help_path %></li>
          
           <% if logged_in? %>
-          <li><%= link_to image_tag("ic_group_white_24dp.png"), users_path %></li>
+          <li><%= link_to 'users', users_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>
