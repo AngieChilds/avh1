@@ -56,7 +56,7 @@ class User < ApplicationRecord
   has_many :jobs,     through: :comps
   has_many :prizes,   through: :comps
   has_many :rules,    through: :comps
-  has_many :owners,   through: :comps
+
   
 end
   
