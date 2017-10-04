@@ -1,0 +1,27 @@
+<%= form_for(comp_user) do |f| %>
+  <% if comp_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comp_user.errors.count, "error") %> prohibited this comp_user from being saved:</h2>
+
+      <ul>
+      <% comp_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :comp_id %>
+    <%= f.text_field :comp_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comp:</strong>
+  <%= @comp_user.comp.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @comp_user.user.player %>
+</p>
+
+<%= link_to 'Edit', edit_comp_user_path(@comp_user) %> |
+<%= link_to 'Back', comp_users_path %>

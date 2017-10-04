@@ -3,15 +3,16 @@ class Comp < ApplicationRecord
   belongs_to :user
   validates  :user_id, presence: true
   validates  :name, presence: true, length: { minimum: 4 }
-  
-  
+ 
   
   
   has_many :jobs,    inverse_of: :comp
   has_many :stories, inverse_of: :comp
   has_many :rules,   inverse_of: :comp
   has_many :prizes,  inverse_of: :comp
-  has_one  :owner,   inverse_of: :comp
+  
+  has_many :users, :through => :comp_users  
+  has_many :comp_users, :dependent => :destroy
   
   
   validates_associated :jobs

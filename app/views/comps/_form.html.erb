@@ -26,10 +26,17 @@
     <%= f.text_area :text %>
   </div>
    <div class="field">
-    Link to the player on AVH.
-    <%= f.text_field :ref_player %>
+    Link to the owner player on AVH.
+    <%= f.text_field :ref_player%>
   </div>
+    <div class="field">
+    Link to the owner list of users.
+    <% list_of_users = User.all.map { |user| [user.player, user.id]} %>
     
+    <%= f.select(:owner, options_for_select(list_of_users)) %>
+    
+  </div>
+     
     
     
     

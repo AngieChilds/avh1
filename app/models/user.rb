@@ -56,8 +56,11 @@ class User < ApplicationRecord
   has_many :jobs,     through: :comps
   has_many :prizes,   through: :comps
   has_many :rules,    through: :comps
-
   
+  validates :player, presence: true, uniqueness: true  
+  has_many :comps, :through => :comps_users  
+  has_many :comp_users, :dependent => :destroy
+ 
 end
   
   

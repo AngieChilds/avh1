@@ -24,7 +24,9 @@ class ApplicationController < ActionController::Base
      redirect_to(root_url) unless (current_user.trusty?    || current_user.moderator? || current_user.admin?)
      end
   
-  
-  
+    def list_of_users
+    list_of_users = User.where(trusty: true).or(moderator: true).or(admin: true)
+# <= select @list_of_users
+    end
   
 end

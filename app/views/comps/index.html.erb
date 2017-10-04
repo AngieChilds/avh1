@@ -14,11 +14,12 @@
   
       <tr>
         <th width="15%">Player avh1</th>
-        <th width="20%">Referring player</th>
+        <th width="15%">Referring player</th>
+        <th width="15%">Owner</th>
         <th width="10%">Name</th>
         <th width="10%">Type </th>
-        <th width="15%">Start</th>
-        <th width="15%">Ends</th>
+        <th width="10%">Start</th>
+        <th width="10%">Ends</th>
         <th width="5%">Add prize</th>
         <th width="5%">Edit</th>
         <th width="5%">Delete</th>
@@ -35,11 +36,12 @@
   
       <tr>
         <td width="15%"><%= comp.user.try(:player) %></td>
-        <td width="20%"><%= link_to comp["ref_player"], comp["ref_player"] %></td>
+        <td width="15%"><%= link_to comp["ref_player"], comp["ref_player"] %></td>
+        <td width="15%"><%= @comp_user.user.player %></td>
         <td width="10%"><%= link_to (comp.name), comp_path(comp) %></td>
         <td width="10%"><%= comp.foo %></td>
-        <td width="15%"><%= comp.startdate.strftime("%Y-%b-%d") %></td>
-        <td width="15%"><%= comp.enddate.strftime("%Y-%b-%d") %></td>
+        <td width="10%"><%= comp.startdate.strftime("%Y-%b-%d") %></td>
+        <td width="10%"><%= comp.enddate.strftime("%Y-%b-%d") %></td>
         <td width="5%"><%= link_to image_tag("xp24.png"), pz_comp_path(comp) %></td>
         <td width="5%"><%= link_to image_tag("ic_settings_black_24dp.png"), edit_comp_path(comp) %></td>
         <td width="5%"><%= link_to image_tag("ic_delete_forever.png"), comp, method: :delete, data: { confirm: 'Are you sure?' } %></td>

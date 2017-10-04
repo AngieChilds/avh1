@@ -3,7 +3,6 @@ module CompsHelper
      comp.jobs.order(:amount)
   
    end
-
   
   
 end

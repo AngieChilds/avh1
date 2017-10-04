@@ -63,7 +63,7 @@ class CompsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comp_params
-      params.require(:comp).permit(:name, :ref_player, :foo, :text, :startdate, 
-                                  :enddate, stories_attributes: [:id, :title, :text, :_destroy]).merge(user_id: current_user.id)
+      params.require(:comp).permit(:name, :ref_player, :owner, :foo, :text, :startdate, 
+                                  :enddate, stories_attributes: [:title, :text, :_destroy]).merge(user_id: current_user.id)
     end
 end

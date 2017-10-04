@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Comp Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comp</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comp_users.each do |comp_user| %>
+      <tr>
+        <td><%= comp_user.comp.name %></td>
+        <td><%= comp_user.user.player %></td>
+        <td><%= link_to 'Show', comp_user %></td>
+        <td><%= link_to 'Edit', edit_comp_user_path(comp_user) %></td>
+        <td><%= link_to 'Destroy', comp_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comp User', new_comp_user_path %>
