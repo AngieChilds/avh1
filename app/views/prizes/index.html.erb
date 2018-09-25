@@ -14,6 +14,7 @@
     <% @prizes.each do |prize| %>
       <tr>
         <td><%= prize.user.try(:player) %></td>
+        <td><%= prize.prize_type %>
         <td><%= prize.text %></td>
         
         <td><%= link_to 'Show', prize %></td>

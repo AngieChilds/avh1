@@ -58,8 +58,8 @@ class User < ApplicationRecord
   has_many :rules,    through: :comps
   
   validates :player, presence: true, uniqueness: true  
-  has_many :comps, :through => :comps_users  
-  has_many :comp_users, :dependent => :destroy
+  
+  has_many :players, class_name: 'Comp'
  
 end
   

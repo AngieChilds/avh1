@@ -1,13 +1,18 @@
  <%= form_for([@comp, @comp.prizes.build]) do |f| %>
 
+<div>
 
-
-  <div class="field">
+    Prize Type:<%=  f.select(:prize_type) do %>
+ <%= image_tag("credits24.png"), alt: ['Credits'], ['coins'], ['tack'], [ 'horse'], [ 'token'], [ 'feed'], [ 'treats']].each do |p| -%>
+ <%= content_tag(:option, p.first, value: p.last) %>
+    
+</div>   
+ <div class="field">
     <%= f.label :text %>
     <%= f.text_field :text %>
   </div>
-   
-  <div class="actions">
+
+ <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+<% end %>"

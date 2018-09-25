@@ -70,7 +70,7 @@ class PrizesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prize_params
-      params.require(:prize).permit(:text).merge(user_id: current_user.id)
+      params.require(:prize).permit(:text, :prize_type).merge(user_id: current_user.id)
     end
 end
 

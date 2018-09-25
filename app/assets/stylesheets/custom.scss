@@ -12,6 +12,9 @@ $western: #333333;
 $english: #BF24EE;
 $gray-medium-light: #eaeaea;
 $midnight-blue: #036;
+$job: #F0FFFF;
+$story: #FFF5EE;
+$black: #000000;
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -263,4 +266,22 @@ input {
     background-color: $western;
         color: $white
         
+}
+.job {
+    background-color: $job; 
+    background: url("job24.png") no-repeat center center;
+        color: $black;
+   border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;        
+}
+.story {
+    background-color: $story;
+    background: url("book.png") no-repeat center center;
+       color: $black;
+     border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;   
 }
