@@ -1,7 +1,7 @@
 class ShowblogsController < ApplicationController
  before_action :logged_in_user, only: [:index, :new, :edit, :update, :destroy]
  before_action :trusty_user,    only: [:new, :edit, :update, :destroy]
-
+ before_action :moderator_user, only: [:edit, :update, :destroy]
 
    def create
     @showblog = Showblog.new(showblog_params)
